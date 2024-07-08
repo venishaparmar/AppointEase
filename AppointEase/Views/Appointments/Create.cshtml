@@ -1,0 +1,20 @@
+﻿@model AppointEase.Views.AppointmentViewModel
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ClientName"></label>
+        <input asp-for="ClientName" class="form-control" />
+        <span asp-validation-for="ClientName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ClientEmail"></label>
+        <input asp-for="ClientEmail" class="form-control" />
+        <span asp-validation-for="ClientEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AppointmentDate"></label>
+        <input asp-for="AppointmentDate" class="form-control" />
+        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Appointment</button>
+</form>

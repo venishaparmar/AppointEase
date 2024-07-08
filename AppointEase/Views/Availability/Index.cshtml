@@ -1,0 +1,29 @@
+﻿@model IEnumerable<AppointEase.Model.Availability>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Day of the Week</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var availability in Model)
+        {
+            <tr>
+                <td>@availability.DayOfWeek</td>
+                <td>@availability.StartTime</td>
+                <td>@availability.EndTime</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@availability.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@availability.Id" method="post" style="display:inline">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Add New Availability</a>
